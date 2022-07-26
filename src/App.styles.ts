@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+type Props = {
+  characterId: number;
+};
+
+export const Wrapper = styled.div<Props>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +18,7 @@ export const Wrapper = styled.div`
     height: 40px;
     border-radius: 10px;
     border: 0;
-    background: black;
+    background: ${(props) => (props.characterId > 5 ? 'orange' : 'black')};
     color: white;
     padding: 0 10px;
     cursor: pointer;
